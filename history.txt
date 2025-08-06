@@ -1,0 +1,838 @@
+    1  hisory
+    2  history
+    3  cat history.txt 
+    4  crontab -r
+    5  crontab -e
+    6  cat history.txt 
+    7  kubectl get sercrets -A
+    8  kubectl get secrets -A
+    9  ls 
+   10  find / -name k8s-133-admin-kubeconfig
+   11  kubectl get tenantcontrolplane
+   12  kubectl --kubeconfig=k8s-133-admin-kubeconfig get nodes
+   13  kubectl --kubeconfig=/etc/rancher/k3s/k3s.yaml get secrets -n default k8s-133-admin-kubeconfig -o json   | jq -r '.data["admin.conf"]'   | base64 --decode   > k8s-133-admin-kubeconfig
+   14  apt install jq
+   15  apt-get update
+   16  apt-get install jq
+   17  kubectl --kubeconfig=/etc/rancher/k3s/k3s.yaml get secrets -n default k8s-133-admin-kubeconfig -o json   | jq -r '.data["admin.conf"]'   | base64 --decode   > k8s-133-admin-kubeconfig
+   18  kubectl --kubeconfig=k8s-133-admin-kubeconfig get nodes
+   19  kubectl get tenantcontrolplane
+   20  kubectl get ingress -A
+   21  ztm 
+   22  wget https://github.com/flomesh-io/ztm/releases/download/v1.0.0-rc2/ztm-aio-v1.0.0-rc2-generic_linux-x86_64.tar.gz
+   23  tar -xvzf ztm-aio-v1.0.0-rc2-generic_linux-x86_64.tar.gz
+   24  mv bin/ztm /usr/local/bin/
+   25  cat > ztm-root.json <<EOF
+{"ca":"-----BEGIN CERTIFICATE-----\nMIICoTCCAYkCFDTBQGC1wcsDcyloJgVt3zBV4Jl3MA0GCSqGSIb3DQEBCwUAMA0x\nCzAJBgNVBAMMAmNhMB4XDTI1MDYyMDA2NDcwNFoXDTI2MDYyMDA2NDcwNFowDTEL\nMAkGA1UEAwwCY2EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC63geM\nL6dfnrMx2Vt0hRMR/afSQY8FDYbxvrRE9nFzUsC4p5X2SD5ViDmbaawaS5vkVNWB\ncDxzbMbuo4e2uunvy7OhjQH30LOKuFlHsNqJU5hgzYjZgJI15aYkn2MG2FaQBFie\nCf4H2NCDO45wzFhXLGgVTq6vzHdWteArJOQ3tw1UJqXbSUEZgr4ZgFjujFLp8uY0\nCjUElQEHsvyzTtr1O5Mli4srGNx9JxmlIWmpaD5Q1mBH68dD+CZ+jCOi4SdplkGK\nZNSQ65v9e+6kbjDbSVL9Fm1vibaPOdpGAPh6D0PA4fI6G/jsg2Qpp/ZSNcXgtOOD\nU6JouMvR6fOOQp/xAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHwWL4xT6ddMHWep\nD7YoORT/IbrERzXZqaedhFACDfQBb1F3l29O5kwyPQ2ifNPZ+I6lxqumlgcrJEot\n5sfDUrTSQVxaUB8hIGK73pciMQEUCmU7IvrNP9r2V0D1gitCstXukudtkKLkPiav\n2jxVOAZXef+paouCmM4gWE/XDmUZB6o/DJ2b2Xe5/pZSO1fJVJjpwjk8Qeu+wJwA\nbwUa3xBC+VRuI+s+azlEPYy9kc8gh3HCT7v6GfUU7dihbFPFUORSAb7hl6LF9F+J\ndnR/qj1H5l+jnMN8jPM6/6+4h9Hz9t9QVQjGfIQqqi1J8kUyQzVpejqwORUymW6e\njGG6Nfg=\n-----END CERTIFICATE-----\n","agent":{"certificate":"-----BEGIN CERTIFICATE-----\nMIICozCCAYsCFDMb2cRj0nDHTCSoFltGyLhZudcKMA0GCSqGSIb3DQEBCwUAMA0x\nCzAJBgNVBAMMAmNhMB4XDTI1MDYyMTA2MTU1N1oXDTI2MDYyMTA2MTU1N1owDzEN\nMAsGA1UEAwwEcm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJdG\niEzgqmx5GuVn6OpzdSEW3iTXf/yrucipgo6gAGACtESvWe5B+f537jJFWfCGkBnX\nCt5hfZw7u6vdeVzWvhRvKZU5aYDJtdYg4ab1V3hEO0r12dVQ3TI83dy33Yp565yC\n5M7Da90vIyCD3I0A7j7dbc553/JUgW06Ni9SkSLrQzL/0a/2aj/HNRbxOOugKtAe\ntaG+PlDzGiEyeAoqrKHrXBwrpfZHOJ2zX6Z42ZVTCsbXpKqg0UG6dL72wc2LtIpr\nR12mkG7KbJZ1Bsod47DE6E6AYbsoHvmRy6+540vMcGLvSrVM71eYeuvqJlSEUCgz\n/wAjZtF/JKOpoegUZj8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAE1yJ8ttVrlnM\nHuymiRi5NdefVdH2971pmJjwreo1Pr3Koiq8DoLiesOwphbwR2axYUlatP7zChwT\ntPCBgeH0ZIumGqupG2/Mt51FJ8yZGSsd1C0tUCbJbASw3crY9/lzFuPQeM250jRm\nBY5qBToJEczvdOckUKAeEQndZvB0WFPmiOyZyhE7irmTp25wd0zFHPXTjvb0a2fk\nHNUcNwUwMDFjgbGFcdbKHV4ejLlEx6oqJ7dvyi2IP0p20SPLnzZJSNBagOzyzLcP\nCHHgBWkLF3LlWaodLXW95LdUv609lHwmp4E2M71FTDXPTLGIBdjVBNwVcDI15e73\nCqD0n0kifg==\n-----END CERTIFICATE-----\n","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCXRohM4KpseRrl\nZ+jqc3UhFt4k13/8q7nIqYKOoABgArREr1nuQfn+d+4yRVnwhpAZ1wreYX2cO7ur\n3Xlc1r4UbymVOWmAybXWIOGm9Vd4RDtK9dnVUN0yPN3ct92KeeucguTOw2vdLyMg\ng9yNAO4+3W3Oed/yVIFtOjYvUpEi60My/9Gv9mo/xzUW8TjroCrQHrWhvj5Q8xoh\nMngKKqyh61wcK6X2Rzids1+meNmVUwrG16SqoNFBunS+9sHNi7SKa0ddppBuymyW\ndQbKHeOwxOhOgGG7KB75kcuvueNLzHBi70q1TO9XmHrr6iZUhFAoM/8AI2bRfySj\nqaHoFGY/AgMBAAECggEAPmnv74QcXI/k7HSgUScc0u+r7Nhq6nVxvBxQDQdv0C0d\ncl9Ew/w9qGOUB/K8JnRmfPrP9auUl0K/7it9GLRTDXxF1FcxM91FZFkBsRB1q92+\n9vETlKL9+G3LffbwdWNTNip9O9++H66EmDQ/aX/STGawmOmI3+NE2SuU0paG4jg7\nCBy5gVk6qH9fKJT6VVn2AykWyYgAy6hiS/B7eZUkoWHiehQY/Bh3VK3uRrWjs2tW\n0OnM2e88JOSgqb+3DUS6SaEVztXiktTLj7T2VUP2Hx9GUKOixJyLIaAMQUbqHpiP\nfXeHUSNlrA1ukxCtWtShM8jn+1FCLSAl2tYnQrGR5QKBgQDU5Z6UjRuxu1FqGoJf\nygMikdASq+IZbU2Ji729K9FN8VUKt4z1isNa/uSue/VNxyQEe0hSs0Vgg2Ff6A4p\n6+13mOSbDI8l9nqPdjtGjhEUm76sUY8s+9hqHsLXBEux5VXm4enLqqdfLMWyiZqI\nITgMtnuiZkPrOiwnJ5ZkKONgzQKBgQC15xgHfLRnu5NeSeQhFj/czzosOv1lZARC\nrSVlkb7ReaCf8kJ5TC/qu0w5SlNtf7wJuYtRTlcZR8XV5lxjl30YmTykPdssmgg8\nyDWkPwBLNOrDvFrAh6EXuAcCjjsMwD4s7eKFJ/YSrJ+kY1wKTnOC3mJFIPIFPMNi\npX3Bf/VzOwKBgCrNX2yOUhsRhfTHD58ihi7VEfgvBm4GQ6h7p9H4lUQOWQKmlHhp\nRY1t4ZwS3+abOuqLvqah1DjrMRCPHwnenQeGfa+OftkrDMj7BD/TICv8hAExBJAO\nshvjw1hnTLCfYv3gPZjs3mmMHtMeRytHQnWL2p9z4APS1j2o/9tzPQOhAoGAOPoZ\n3L6DA7sNfgtHGdYOSuveHNydYpThgMEbZaUxUAv49CC+EaB7odrpFUjiuPm5vJIR\nwXX4ckK5BTcS2V8qH/pftFJrxJy6188efkP9o5D/uC/XfVb+bp+GEpbaiDPvRcN9\noJfTzCWmG6fDvLa2F9fwkBaxuFJAITYVHfcmuuECgYEAhP6fMC9U6ez4rD/negDh\n/H2FBo9IJ9lCyuRsCFErDPI/FYOPooW/VHkdmoWQ8oCJBZWkFppC5x+1r2oOLSSr\n5qoQOXnaA0W21Ls9OGESLlWuneeG6VD6yAuTGak0vR4oa6HwzDPzbjE0MKD7Y99J\ntQtbfz1/a1mY4jQY18a9KjU=\n-----END PRIVATE KEY-----\n"},"bootstraps":["197.13.31.81:8686"]}
+EOF
+
+   26  ztm start agent
+   27  ztm join u2c_mesh --as khy_kamaji_node --permit ztm-root.json
+   28  ztm get mesh
+   29  ztm get ep
+   30  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+   31  helm repo update
+   32  helm install nginx-ingress ingress-nginx/ingress-nginx   --namespace ingress-nginx --create-namespace   --set controller.service.type=LoadBalancer
+   33  kubectl get namespaces
+   34  kubectl get tenantcontrolplanes
+   35  kubectl get svc -n k8s-133
+   36  kubectl get pods -A
+   37  kubectl get pods -n k8s-133 -o wide --kubeconfig ~/.kube/config  # or your mgmt config
+   38  kubectl get svc -n k8s-133 -o wide --kubeconfig ~/.kube/config  # or your mgmt config
+   39  ip 
+   40  ip a
+   41  kubectl get svc -A
+   42  kubectl get svc  -n default
+   43  nano k8s-331-ingress-controller.yaml
+   44  kubectl apply -f k8s-331-ingress-controller.yaml 
+   45  nano k8s-331-ingress-controller.yaml
+   46  kubectl apply -f k8s-331-ingress-controller.yaml 
+   47  nano k8s-331-ingress-controller.yaml
+   48  echo "" > k8s-331-ingress-controller.yaml 
+   49  nano k8s-331-ingress-controller.yaml
+   50  cat k8s-331-ingress-controller.yaml > k8s-133-ingress-controller.yaml
+   51  kubectl apply -f k8s-133-ingress-controller.yaml 
+   52  curl https://k8s-133.example.com -k
+   53  echo "192.168.56.30 k8s-133.example.com" >> /etc/hosts
+   54  nano /etc/host
+   55  nano /etc/hosts
+   56  curl https://k8s-133.example.com -k
+   57  cat /etc/hosts
+   58  kubectl get svc 
+   59  kubectl get svc -n default
+   60  kubectl get svc -n A
+   61  kubectl get svc -A
+   62  nano /etc/hosts
+   63  curl https://k8s-133.example.com -k
+   64  kubectl get ingress -A --kubeconfig ~/.kube/config
+   65  nano k8s-331-ingress-controller.yaml
+   66  nano k8s-133-ingress-controller.yaml 
+   67  kubectl apply -f k8s-133-ingress-controller.yaml 
+   68  curl https://k8s-133.example.com -k
+   69  nano k8s-133-ingress-controller.yaml 
+   70  kubectl -n default patch svc k8s-133 -p '{"spec":{"type":"ClusterIP"}}' --kubeconfig ~/.kube/config
+   71  kubectl get svc k8s-133 -n default --kubeconfig ~/.kube/config
+   72  kubectl edit svc k8s-133 -n default --kubeconfig ~/.kube/config
+   73  kubectl edit tenantcontrolplane k8s-133
+   74  ls
+   75  cd kamaji-
+   76  cd repo-root/
+   77  ls
+   78  cd
+   79  argocd login localhost:8080 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   80  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   81  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+   82  kubectl get svc
+   83  curl https://k8s-133.example.com -k
+   84  argocd app sync kamaji-tenants
+   85  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   86  argocd app sync kamaji-tenants
+   87  kubectl logs -n argocd deployment/argocd-repo-server
+   88  argocd app sync kamaji-project
+   89  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   90  argocd app sync kamaji-project
+   91  argocd app list
+   92  argocd app sync kamaji-tcp
+   93  kubectl get pods -A
+   94  kubectl get pods 
+   95  kubectl get tenantcontrolplanes -A
+   96  kubectl get tenantcontrolplane k8s-134 -o yaml
+   97  kubectl logs -n kamaji-system deploy/kamaji-controller-manager -c manager -f
+   98  kubectl get datastore -A
+   99  kubectl get all -n default | grep k8s-134
+  100  kubectl logs -n kamaji-system deploy/kamaji-controller-manager -c manager -f | grep k8s-134
+  101  kubectl get pods -n kamaji-system
+  102  kubectl get deploy -n kamaji-system
+  103  kubectl logs -n kamaji-system deploy/kamaji -c manager -f
+  104  kubectl get tenantcontrolplane k8s-133 -n default -o yaml
+  105  argocd app sync kamaji-tcp
+  106  kubectl get tcp
+  107  argocd app sync kamaji-tcp
+  108  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o yaml | grep -A 20 "spec:" 
+  109  kubectl get tcp
+  110  argocd app sync kamaji-tcp
+  111  kubectl get tcp
+  112  cat /etc/hosts
+  113  curl https://k8s-133.example.com -k
+  114  kubectl describe tcp k8s-134
+  115  kubectl describe tcp k8s-134 | grep store
+  116  kubectl describe tcp k8s-134 | grep tore
+  117  kubectl log tcp k8s-134 | grep tore
+  118  kubectl logs tcp k8s-134 
+  119* [Bkubectl logs tcp k8s-134 -A
+  120  kubectl logs tcp k8s-133
+  121  kubectl get tcp
+  122  kubectl get tcp -o wide
+  123  kubectlget datastore
+  124  kubectl get datastore
+  125  kubectl logs tcp k8s-134
+  126  alias k=kubectl
+  127  k get pods 
+  128  k get tcp
+  129  k describe tcp k8s-134
+  130  sudo snap install freelens --classic
+  131  k describe tcp k8s-134
+  132  k get events -
+  133  k get events -A
+  134  k et node
+  135  k get node
+  136  k get pods -A
+  137  k get all -A | grep kamaji
+  138  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  139  k create ns k8s-134
+  140  argocd app sync kamaji-tcp
+  141  k get secrets -A
+  142  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+  143  argocd app sync kamaji-tcp
+  144  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  145  k describe tcp k8s-134
+  146  k describe tcp
+  147  k get tcp
+  148  k get pods -A
+  149  k get ns
+  150  k get pods -A
+  151  k get tcp -n k8s-134
+  152  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  153  k logs -n kamaji-system 
+  154  k get pods -n kube-system
+  155  k get pods -n kamaji-system
+  156  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  157  argocd app sync kamaji-tcp
+  158  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  159  argocd app sync kamaji-tcp
+  160  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  161  k get pods -n kamaji-system
+  162  k delete pods -n kamaji-system kamaji-696d8d978-rhkhq --force --grace-period 0
+  163  k get pods -n kamaji-system
+  164  k logs -n kamaji-system kamaji-696d8d978-rwskt
+  165  k get pods -n kamaji-system
+  166  cat .kube/config 
+  167  argocd app sync kamaji-tcp
+  168  histiry
+  169  history
+  170  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+  171  argocd app sync kamaji-tcp
+  172  argocd app delete kamaji-tcp --cascade=false --force
+  173  argocd app delete kamaji-tcp --cascade=false 
+  174  argocd app create kamaji-tcp   --repo http://192.168.56.1:8888/internship/kamaji-project.git   --path tenantcontrolplane   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automa
+  175  argocd app create kamaji-tcp   --repo https://github.com/kridhaythem/kamaji-project   --path tenantcontrolplane   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automated
+  176  argocd app create kamaji-tcp   --repo https://github.com/kridhaythem/kamaji-project   --path tenantcontrolplanes   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automated
+  177  kubectl get tcp -A
+  178  kubectl delete tcp k8s-133
+  179  kubectl apply -f https://github.com/kridhaythem/kamaji-project/blob/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  180  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  181  ls
+  182  kubectl apply -f https://raw.githubusercontent.com/clastix/kamaji/refs/heads/master/config/samples/kamaji_v1alpha1_tenantcontrolplane.yaml
+  183  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o yaml | grep creationTimestamp
+  184  kubectl apply -k https://github.com/clastix/kamaji/config/crd
+  185  kubectl apply -k "https://github.com/clastix/kamaji/config/crd?ref=master"
+  186  curl -s https://raw.githubusercontent.com/clastix/kamaji/master/config/crd/kustomization.yaml | head -n20
+  187  helm uninstall kamaji -n kamaji-system
+  188  kubectl delete crd tenantcontrolplanes.kamaji.clastix.io datastores.kamaji.clastix.io
+  189  helm repo add clastix https://clastix.github.io/charts
+  190  helm repo update
+  191  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  192  kubectl get pods -n kamaji-system
+  193  kubectl -n kamaji-system wait --for=condition=Available --timeout=180s deploy/kamaji
+  194  kubectl get pods -n kamaji-system
+  195  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  196  kubectl apply -k "https://github.com/clastix/kamaji/config/crd?ref=master"
+  197  kubectl get crd | grep kamaji
+  198  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  199  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  200  $helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  201  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  202  helm uninstall kamaji -n kamaji-system
+  203  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o json | jq '.metadata.finalizers'
+  204  kubectl patch crd tenantcontrolplanes.kamaji.clastix.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+  205  kubectl patch crd datastores.kamaji.clastix.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+  206  kubectl delete namespace kamaji-system --grace-period=0 --force
+  207  kubectl get ns
+  208  helm uninstall kamaji -n kamaji-system
+  209  helm uninstall kamaji -n kamaji-system --no-hooks
+  210  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  211  kubectl get ns kamaji-system
+  212  kubectl delete ns kamaji-system
+  213  kubectl get ns kamaji-system
+  214  kubectl get ns
+  215  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system      --set image.tag=latest
+  216  nano kamaji-system.json
+  217  kubectl delete ns kamaji-system -f
+  218  kubectl delete -f ns kamaji-system 
+  219  kubectl delete ns kamaji-system 
+  220  kubectl create ns kamaji-system
+  221  kubectl get namespace kamaji-system -o json
+  222  kubectl get namespace kamaji-system -o json > kamaji-system.json
+  223  kubectl delete all --all -n kamaji-system --grace-period=0 --force
+  224  kubectl delete pvc --all -n kamaji-system --grace-period=0 --force
+  225  kubectl get pvc -n kamaji-system -o name
+  226  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  227  kubectl get ns
+  228  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  229  kubectl get ns kamaji-system
+  230  kubectl get crds | grep kamaji
+  231  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  232  kubectl delete crd tenantcontrolplanes.kamaji.clastix.io
+  233  kubectl delete crd datastores.kamaji.clastix.io
+  234  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  235  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system      --set image.tag=latest
+  236  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest   --debug --timeout 5m
+  237  kubectl get namespace kamaji-system -o json | jq '.spec.finalizers'
+  238  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  239  kubectl delete namespace kamaji-system --grace-period=0 --force
+  240  kubectl get ns kamaji-system -o json > tmp-kamaji-ns.json
+  241  kubectl replace --raw "/api/v1/namespaces/kamaji-system/finalize" -f ./tmp-kamaji-ns.json
+  242  kubectl get ns kamaji-system
+  243  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest   --debug --timeout 5m
+  244  kubectl get jobs -n kamaji-system
+  245  kubectl logs job/kamaji-etcd-setup-1 -n kamaji-system
+  246  kubectl get pvc -n kamaji-system
+  247  kubectl describe job kamaji-etcd-setup-1 -n kamaji-system
+  248  kubectl logs job/kamaji-etcd-setup-1 -n kamaji-system
+  249  kubectl describe pod kamaji-etcd-setup-1-brbdb -n kamaji-system
+  250  kubectl get pods -n calico-system
+  251  kubectl logs -n calico-system -l k8s-app=calico-node
+  252  kubectl get clusterrolebinding | grep calico
+  253  kubectl get clusterrole | grep calico
+  254  kubectl get sa -n calico-system
+  255  kubectl delete pod -n calico-system -l k8s-app=calico-node
+  256  ls
+  257  cat history.txt 
+  258  crontab -e
+  259  history
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+root@kamaji-node:~# crontab -e
+crontab: installing new crontab
+root@kamaji-node:~# crontab -e
+No modification made
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# nano /var/lo
+local/ lock/  log/   
+root@kamaji-node:~# nano /var/lo
+local/ lock/  log/   
+root@kamaji-node:~# nano /var/loc
+local/ lock/  
+root@kamaji-node:~# nano /var/local/bin/backup_histories.sh
+root@kamaji-node:~# 
+root@kamaji-node:~# ls /var/local/
+root@kamaji-node:~# mkdir /var/local/bin
+root@kamaji-node:~# nano /var/local/bin/backup_histories.sh
+root@kamaji-node:~# chmod +x /usr/local/bin/backup_histories.sh
+chmod: cannot access '/usr/local/bin/backup_histories.sh': No such file or directory
+root@kamaji-node:~# mv /var/local/bin/backup_histories.sh  /usr/local/bin/
+root@kamaji-node:~# chmod +x /usr/local/bin/backup_histories.sh
+root@kamaji-node:~# crontab -e
+crontab: installing new crontab
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# cat history.txt 
+--- Wed 06 Aug 2025 11:40:01 AM UTC ---
+--- Wed 06 Aug 2025 11:41:01 AM UTC ---
+--- Wed 06 Aug 2025 11:42:01 AM UTC ---
+--- Wed 06 Aug 2025 11:43:01 AM UTC ---
+--- Wed 06 Aug 2025 11:44:01 AM UTC ---
+root@kamaji-node:~# ls /var/log/
+alternatives.log       cloud-init-output.log  installer/             syslog.2.gz
+apport.log             cloud-init.log         journal/               syslog.3.gz
+apport.log.1           containers/            kern.log               syslog.4.gz
+apt/                   dmesg                  kern.log.1             syslog.5.gz
+auth.log               dmesg.0                kern.log.2.gz          syslog.6.gz
+auth.log.1             dmesg.1.gz             kern.log.3.gz          ubuntu-advantage.log
+auth.log.2.gz          dmesg.2.gz             landscape/             user_histories/
+auth.log.3.gz          dmesg.3.gz             lastlog                wtmp
+bootstrap.log          dmesg.4.gz             pods/                  ztm/
+btmp                   dpkg.log               private/               
+btmp.1                 dpkg.log.1             syslog                 
+calico/                faillog                syslog.1               
+root@kamaji-node:~# ls /var/log/
+alternatives.log       cloud-init-output.log  installer/             syslog.2.gz
+apport.log             cloud-init.log         journal/               syslog.3.gz
+apport.log.1           containers/            kern.log               syslog.4.gz
+apt/                   dmesg                  kern.log.1             syslog.5.gz
+auth.log               dmesg.0                kern.log.2.gz          syslog.6.gz
+auth.log.1             dmesg.1.gz             kern.log.3.gz          ubuntu-advantage.log
+auth.log.2.gz          dmesg.2.gz             landscape/             user_histories/
+auth.log.3.gz          dmesg.3.gz             lastlog                wtmp
+bootstrap.log          dmesg.4.gz             pods/                  ztm/
+btmp                   dpkg.log               private/               
+btmp.1                 dpkg.log.1             syslog                 
+calico/                faillog                syslog.1               
+root@kamaji-node:~# ls /var/log/user_histories/
+root_bash_history_2025-08-06_11-53-01  vagrant_bash_history_2025-08-06_11-53-01
+root_bash_history_2025-08-06_11-54-01  vagrant_bash_history_2025-08-06_11-54-01
+root_bash_history_2025-08-06_11-55-01  vagrant_bash_history_2025-08-06_11-55-01
+root_bash_history_2025-08-06_11-56-01  vagrant_bash_history_2025-08-06_11-56-01
+root_bash_history_2025-08-06_11-57-01  vagrant_bash_history_2025-08-06_11-57-01
+root_bash_history_2025-08-06_11-58-01  vagrant_bash_history_2025-08-06_11-58-01
+root@kamaji-node:~# ls /var/log/user_histories/
+root_bash_history_2025-08-06_11-53-01  vagrant_bash_history_2025-08-06_11-53-01
+root_bash_history_2025-08-06_11-54-01  vagrant_bash_history_2025-08-06_11-54-01
+root_bash_history_2025-08-06_11-55-01  vagrant_bash_history_2025-08-06_11-55-01
+root_bash_history_2025-08-06_11-56-01  vagrant_bash_history_2025-08-06_11-56-01
+root_bash_history_2025-08-06_11-57-01  vagrant_bash_history_2025-08-06_11-57-01
+root_bash_history_2025-08-06_11-58-01  vagrant_bash_history_2025-08-06_11-58-01
+root_bash_history_2025-08-06_11-59-01  vagrant_bash_history_2025-08-06_11-59-01
+root@kamaji-node:~# cat 
+.bash_history                                   get_helm.sh
+.bashrc                                         history.txt
+.cache/                                         k8s-133-admin-kubeconfig
+.config/                                        k8s-133-ingress-controller.yaml
+.kube/                                          k8s-331-ingress-controller.yaml
+.local/                                         kamaji-node-init.sh
+.profile                                        kamaji-project/
+.selected_editor                                kamaji-system.json
+.ssh/                                           repo-root/
+.wget-hsts                                      snap/
+.ztm/                                           tigera-operator.yaml
+bin/                                            tigera-operator.yaml.1
+ca.crt                                          tmp-kamaji-ns.json
+ca.key                                          ztm-aio-v1.0.0-rc2-generic_linux-x86_64.tar.gz
+custom-resources.yaml                           ztm-root.json
+custom-resources.yaml.1                         
+root@kamaji-node:~# cd /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# cat 
+root_bash_history_2025-08-06_11-53-01     vagrant_bash_history_2025-08-06_11-53-01
+root_bash_history_2025-08-06_11-54-01     vagrant_bash_history_2025-08-06_11-54-01
+root_bash_history_2025-08-06_11-55-01     vagrant_bash_history_2025-08-06_11-55-01
+root_bash_history_2025-08-06_11-56-01     vagrant_bash_history_2025-08-06_11-56-01
+root_bash_history_2025-08-06_11-57-01     vagrant_bash_history_2025-08-06_11-57-01
+root_bash_history_2025-08-06_11-58-01     vagrant_bash_history_2025-08-06_11-58-01
+root_bash_history_2025-08-06_11-59-01     vagrant_bash_history_2025-08-06_11-59-01
+root@kamaji-node:/var/log/user_histories# cd /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# cat 
+root_bash_history_2025-08-06_11-53-01     vagrant_bash_history_2025-08-06_11-53-01
+root_bash_history_2025-08-06_11-54-01     vagrant_bash_history_2025-08-06_11-54-01
+root_bash_history_2025-08-06_11-55-01     vagrant_bash_history_2025-08-06_11-55-01
+root_bash_history_2025-08-06_11-56-01     vagrant_bash_history_2025-08-06_11-56-01
+root_bash_history_2025-08-06_11-57-01     vagrant_bash_history_2025-08-06_11-57-01
+root_bash_history_2025-08-06_11-58-01     vagrant_bash_history_2025-08-06_11-58-01
+root_bash_history_2025-08-06_11-59-01     vagrant_bash_history_2025-08-06_11-59-01
+root_bash_history_2025-08-06_12-00-01     vagrant_bash_history_2025-08-06_12-00-01
+root@kamaji-node:/var/log/user_histories# cd /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root_bash_history_2025-08-06_11-53-01  vagrant_bash_history_2025-08-06_11-53-01
+root_bash_history_2025-08-06_11-54-01  vagrant_bash_history_2025-08-06_11-54-01
+root_bash_history_2025-08-06_11-55-01  vagrant_bash_history_2025-08-06_11-55-01
+root_bash_history_2025-08-06_11-56-01  vagrant_bash_history_2025-08-06_11-56-01
+root_bash_history_2025-08-06_11-57-01  vagrant_bash_history_2025-08-06_11-57-01
+root_bash_history_2025-08-06_11-58-01  vagrant_bash_history_2025-08-06_11-58-01
+root_bash_history_2025-08-06_11-59-01  vagrant_bash_history_2025-08-06_11-59-01
+root_bash_history_2025-08-06_12-00-01  vagrant_bash_history_2025-08-06_12-00-01
+root_bash_history_2025-08-06_12-01-01  vagrant_bash_history_2025-08-06_12-01-01
+root_bash_history_2025-08-06_12-02-01  vagrant_bash_history_2025-08-06_12-02-01
+root_bash_history_2025-08-06_12-03-01  vagrant_bash_history_2025-08-06_12-03-01
+root_bash_history_2025-08-06_12-04-01  vagrant_bash_history_2025-08-06_12-04-01
+root_bash_history_2025-08-06_12-05-01  vagrant_bash_history_2025-08-06_12-05-01
+root_bash_history_2025-08-06_12-06-01  vagrant_bash_history_2025-08-06_12-06-01
+root_bash_history_2025-08-06_12-07-01  vagrant_bash_history_2025-08-06_12-07-01
+root_bash_history_2025-08-06_12-08-01  vagrant_bash_history_2025-08-06_12-08-01
+root_bash_history_2025-08-06_12-09-01  vagrant_bash_history_2025-08-06_12-09-01
+root_bash_history_2025-08-06_12-10-01  vagrant_bash_history_2025-08-06_12-10-01
+root_bash_history_2025-08-06_12-11-01  vagrant_bash_history_2025-08-06_12-11-01
+root_bash_history_2025-08-06_12-12-01  vagrant_bash_history_2025-08-06_12-12-01
+root_bash_history_2025-08-06_12-13-01  vagrant_bash_history_2025-08-06_12-13-01
+root_bash_history_2025-08-06_12-14-01  vagrant_bash_history_2025-08-06_12-14-01
+root_bash_history_2025-08-06_12-15-01  vagrant_bash_history_2025-08-06_12-15-01
+root_bash_history_2025-08-06_12-16-01  vagrant_bash_history_2025-08-06_12-16-01
+root_bash_history_2025-08-06_12-17-01  vagrant_bash_history_2025-08-06_12-17-01
+root_bash_history_2025-08-06_12-18-01  vagrant_bash_history_2025-08-06_12-18-01
+root_bash_history_2025-08-06_12-19-01  vagrant_bash_history_2025-08-06_12-19-01
+root_bash_history_2025-08-06_12-20-01  vagrant_bash_history_2025-08-06_12-20-01
+root@kamaji-node:/var/log/user_histories# nano /var/local/bin/backup_histories.sh
+root@kamaji-node:/var/log/user_histories# nano /usr/local/bin/backup_histories.sh
+root@kamaji-node:/var/log/user_histories# chmod +x /usr/local/bin/backup_histories.sh
+root@kamaji-node:/var/log/user_histories# rm /var/log/user_histories/*
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# ls /var/log/user_histories/
+root@kamaji-node:/var/log/user_histories# cd ..
+root@kamaji-node:/var/log# cd al
+all_users_history.txt  alternatives.log       
+root@kamaji-node:/var/log# cat all_users_history.txt 
+--- Backup at Wed 06 Aug 2025 12:26:01 PM UTC ---
+----- vagrant's history -----
+
+----- root's history -----
+
+root@kamaji-node:/var/log# cat all_users_history.txt 
+--- Backup at Wed 06 Aug 2025 12:27:01 PM UTC ---
+----- vagrant's history -----
+
+----- root's history -----
+
+root@kamaji-node:/var/log# cat all_users_history.txt 
+--- Backup at Wed 06 Aug 2025 12:27:01 PM UTC ---
+----- vagrant's history -----
+
+----- root's history -----
+
+root@kamaji-node:/var/log# cat all_users_history.txt 
+--- Backup at Wed 06 Aug 2025 12:27:01 PM UTC ---
+----- vagrant's history -----
+
+----- root's history -----
+
+root@kamaji-node:/var/log# cd
+root@kamaji-node:~# cat .bash_history 
+root@kamaji-node:~# history
+    1  hisory
+    2  history
+    3  cat history.txt 
+    4  crontab -r
+    5  crontab -e
+    6  cat history.txt 
+    7  kubectl get sercrets -A
+    8  kubectl get secrets -A
+    9  ls 
+   10  find / -name k8s-133-admin-kubeconfig
+   11  kubectl get tenantcontrolplane
+   12  kubectl --kubeconfig=k8s-133-admin-kubeconfig get nodes
+   13  kubectl --kubeconfig=/etc/rancher/k3s/k3s.yaml get secrets -n default k8s-133-admin-kubeconfig -o json   | jq -r '.data["admin.conf"]'   | base64 --decode   > k8s-133-admin-kubeconfig
+   14  apt install jq
+   15  apt-get update
+   16  apt-get install jq
+   17  kubectl --kubeconfig=/etc/rancher/k3s/k3s.yaml get secrets -n default k8s-133-admin-kubeconfig -o json   | jq -r '.data["admin.conf"]'   | base64 --decode   > k8s-133-admin-kubeconfig
+   18  kubectl --kubeconfig=k8s-133-admin-kubeconfig get nodes
+   19  kubectl get tenantcontrolplane
+   20  kubectl get ingress -A
+   21  ztm 
+   22  wget https://github.com/flomesh-io/ztm/releases/download/v1.0.0-rc2/ztm-aio-v1.0.0-rc2-generic_linux-x86_64.tar.gz
+   23  tar -xvzf ztm-aio-v1.0.0-rc2-generic_linux-x86_64.tar.gz
+   24  mv bin/ztm /usr/local/bin/
+   25  cat > ztm-root.json <<EOF
+{"ca":"-----BEGIN CERTIFICATE-----\nMIICoTCCAYkCFDTBQGC1wcsDcyloJgVt3zBV4Jl3MA0GCSqGSIb3DQEBCwUAMA0x\nCzAJBgNVBAMMAmNhMB4XDTI1MDYyMDA2NDcwNFoXDTI2MDYyMDA2NDcwNFowDTEL\nMAkGA1UEAwwCY2EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC63geM\nL6dfnrMx2Vt0hRMR/afSQY8FDYbxvrRE9nFzUsC4p5X2SD5ViDmbaawaS5vkVNWB\ncDxzbMbuo4e2uunvy7OhjQH30LOKuFlHsNqJU5hgzYjZgJI15aYkn2MG2FaQBFie\nCf4H2NCDO45wzFhXLGgVTq6vzHdWteArJOQ3tw1UJqXbSUEZgr4ZgFjujFLp8uY0\nCjUElQEHsvyzTtr1O5Mli4srGNx9JxmlIWmpaD5Q1mBH68dD+CZ+jCOi4SdplkGK\nZNSQ65v9e+6kbjDbSVL9Fm1vibaPOdpGAPh6D0PA4fI6G/jsg2Qpp/ZSNcXgtOOD\nU6JouMvR6fOOQp/xAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHwWL4xT6ddMHWep\nD7YoORT/IbrERzXZqaedhFACDfQBb1F3l29O5kwyPQ2ifNPZ+I6lxqumlgcrJEot\n5sfDUrTSQVxaUB8hIGK73pciMQEUCmU7IvrNP9r2V0D1gitCstXukudtkKLkPiav\n2jxVOAZXef+paouCmM4gWE/XDmUZB6o/DJ2b2Xe5/pZSO1fJVJjpwjk8Qeu+wJwA\nbwUa3xBC+VRuI+s+azlEPYy9kc8gh3HCT7v6GfUU7dihbFPFUORSAb7hl6LF9F+J\ndnR/qj1H5l+jnMN8jPM6/6+4h9Hz9t9QVQjGfIQqqi1J8kUyQzVpejqwORUymW6e\njGG6Nfg=\n-----END CERTIFICATE-----\n","agent":{"certificate":"-----BEGIN CERTIFICATE-----\nMIICozCCAYsCFDMb2cRj0nDHTCSoFltGyLhZudcKMA0GCSqGSIb3DQEBCwUAMA0x\nCzAJBgNVBAMMAmNhMB4XDTI1MDYyMTA2MTU1N1oXDTI2MDYyMTA2MTU1N1owDzEN\nMAsGA1UEAwwEcm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJdG\niEzgqmx5GuVn6OpzdSEW3iTXf/yrucipgo6gAGACtESvWe5B+f537jJFWfCGkBnX\nCt5hfZw7u6vdeVzWvhRvKZU5aYDJtdYg4ab1V3hEO0r12dVQ3TI83dy33Yp565yC\n5M7Da90vIyCD3I0A7j7dbc553/JUgW06Ni9SkSLrQzL/0a/2aj/HNRbxOOugKtAe\ntaG+PlDzGiEyeAoqrKHrXBwrpfZHOJ2zX6Z42ZVTCsbXpKqg0UG6dL72wc2LtIpr\nR12mkG7KbJZ1Bsod47DE6E6AYbsoHvmRy6+540vMcGLvSrVM71eYeuvqJlSEUCgz\n/wAjZtF/JKOpoegUZj8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAE1yJ8ttVrlnM\nHuymiRi5NdefVdH2971pmJjwreo1Pr3Koiq8DoLiesOwphbwR2axYUlatP7zChwT\ntPCBgeH0ZIumGqupG2/Mt51FJ8yZGSsd1C0tUCbJbASw3crY9/lzFuPQeM250jRm\nBY5qBToJEczvdOckUKAeEQndZvB0WFPmiOyZyhE7irmTp25wd0zFHPXTjvb0a2fk\nHNUcNwUwMDFjgbGFcdbKHV4ejLlEx6oqJ7dvyi2IP0p20SPLnzZJSNBagOzyzLcP\nCHHgBWkLF3LlWaodLXW95LdUv609lHwmp4E2M71FTDXPTLGIBdjVBNwVcDI15e73\nCqD0n0kifg==\n-----END CERTIFICATE-----\n","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCXRohM4KpseRrl\nZ+jqc3UhFt4k13/8q7nIqYKOoABgArREr1nuQfn+d+4yRVnwhpAZ1wreYX2cO7ur\n3Xlc1r4UbymVOWmAybXWIOGm9Vd4RDtK9dnVUN0yPN3ct92KeeucguTOw2vdLyMg\ng9yNAO4+3W3Oed/yVIFtOjYvUpEi60My/9Gv9mo/xzUW8TjroCrQHrWhvj5Q8xoh\nMngKKqyh61wcK6X2Rzids1+meNmVUwrG16SqoNFBunS+9sHNi7SKa0ddppBuymyW\ndQbKHeOwxOhOgGG7KB75kcuvueNLzHBi70q1TO9XmHrr6iZUhFAoM/8AI2bRfySj\nqaHoFGY/AgMBAAECggEAPmnv74QcXI/k7HSgUScc0u+r7Nhq6nVxvBxQDQdv0C0d\ncl9Ew/w9qGOUB/K8JnRmfPrP9auUl0K/7it9GLRTDXxF1FcxM91FZFkBsRB1q92+\n9vETlKL9+G3LffbwdWNTNip9O9++H66EmDQ/aX/STGawmOmI3+NE2SuU0paG4jg7\nCBy5gVk6qH9fKJT6VVn2AykWyYgAy6hiS/B7eZUkoWHiehQY/Bh3VK3uRrWjs2tW\n0OnM2e88JOSgqb+3DUS6SaEVztXiktTLj7T2VUP2Hx9GUKOixJyLIaAMQUbqHpiP\nfXeHUSNlrA1ukxCtWtShM8jn+1FCLSAl2tYnQrGR5QKBgQDU5Z6UjRuxu1FqGoJf\nygMikdASq+IZbU2Ji729K9FN8VUKt4z1isNa/uSue/VNxyQEe0hSs0Vgg2Ff6A4p\n6+13mOSbDI8l9nqPdjtGjhEUm76sUY8s+9hqHsLXBEux5VXm4enLqqdfLMWyiZqI\nITgMtnuiZkPrOiwnJ5ZkKONgzQKBgQC15xgHfLRnu5NeSeQhFj/czzosOv1lZARC\nrSVlkb7ReaCf8kJ5TC/qu0w5SlNtf7wJuYtRTlcZR8XV5lxjl30YmTykPdssmgg8\nyDWkPwBLNOrDvFrAh6EXuAcCjjsMwD4s7eKFJ/YSrJ+kY1wKTnOC3mJFIPIFPMNi\npX3Bf/VzOwKBgCrNX2yOUhsRhfTHD58ihi7VEfgvBm4GQ6h7p9H4lUQOWQKmlHhp\nRY1t4ZwS3+abOuqLvqah1DjrMRCPHwnenQeGfa+OftkrDMj7BD/TICv8hAExBJAO\nshvjw1hnTLCfYv3gPZjs3mmMHtMeRytHQnWL2p9z4APS1j2o/9tzPQOhAoGAOPoZ\n3L6DA7sNfgtHGdYOSuveHNydYpThgMEbZaUxUAv49CC+EaB7odrpFUjiuPm5vJIR\nwXX4ckK5BTcS2V8qH/pftFJrxJy6188efkP9o5D/uC/XfVb+bp+GEpbaiDPvRcN9\noJfTzCWmG6fDvLa2F9fwkBaxuFJAITYVHfcmuuECgYEAhP6fMC9U6ez4rD/negDh\n/H2FBo9IJ9lCyuRsCFErDPI/FYOPooW/VHkdmoWQ8oCJBZWkFppC5x+1r2oOLSSr\n5qoQOXnaA0W21Ls9OGESLlWuneeG6VD6yAuTGak0vR4oa6HwzDPzbjE0MKD7Y99J\ntQtbfz1/a1mY4jQY18a9KjU=\n-----END PRIVATE KEY-----\n"},"bootstraps":["197.13.31.81:8686"]}
+EOF
+
+   26  ztm start agent
+   27  ztm join u2c_mesh --as khy_kamaji_node --permit ztm-root.json
+   28  ztm get mesh
+   29  ztm get ep
+   30  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+   31  helm repo update
+   32  helm install nginx-ingress ingress-nginx/ingress-nginx   --namespace ingress-nginx --create-namespace   --set controller.service.type=LoadBalancer
+   33  kubectl get namespaces
+   34  kubectl get tenantcontrolplanes
+   35  kubectl get svc -n k8s-133
+   36  kubectl get pods -A
+   37  kubectl get pods -n k8s-133 -o wide --kubeconfig ~/.kube/config  # or your mgmt config
+   38  kubectl get svc -n k8s-133 -o wide --kubeconfig ~/.kube/config  # or your mgmt config
+   39  ip 
+   40  ip a
+   41  kubectl get svc -A
+   42  kubectl get svc  -n default
+   43  nano k8s-331-ingress-controller.yaml
+   44  kubectl apply -f k8s-331-ingress-controller.yaml 
+   45  nano k8s-331-ingress-controller.yaml
+   46  kubectl apply -f k8s-331-ingress-controller.yaml 
+   47  nano k8s-331-ingress-controller.yaml
+   48  echo "" > k8s-331-ingress-controller.yaml 
+   49  nano k8s-331-ingress-controller.yaml
+   50  cat k8s-331-ingress-controller.yaml > k8s-133-ingress-controller.yaml
+   51  kubectl apply -f k8s-133-ingress-controller.yaml 
+   52  curl https://k8s-133.example.com -k
+   53  echo "192.168.56.30 k8s-133.example.com" >> /etc/hosts
+   54  nano /etc/host
+   55  nano /etc/hosts
+   56  curl https://k8s-133.example.com -k
+   57  cat /etc/hosts
+   58  kubectl get svc 
+   59  kubectl get svc -n default
+   60  kubectl get svc -n A
+   61  kubectl get svc -A
+   62  nano /etc/hosts
+   63  curl https://k8s-133.example.com -k
+   64  kubectl get ingress -A --kubeconfig ~/.kube/config
+   65  nano k8s-331-ingress-controller.yaml
+   66  nano k8s-133-ingress-controller.yaml 
+   67  kubectl apply -f k8s-133-ingress-controller.yaml 
+   68  curl https://k8s-133.example.com -k
+   69  nano k8s-133-ingress-controller.yaml 
+   70  kubectl -n default patch svc k8s-133 -p '{"spec":{"type":"ClusterIP"}}' --kubeconfig ~/.kube/config
+   71  kubectl get svc k8s-133 -n default --kubeconfig ~/.kube/config
+   72  kubectl edit svc k8s-133 -n default --kubeconfig ~/.kube/config
+   73  kubectl edit tenantcontrolplane k8s-133
+   74  ls
+   75  cd kamaji-
+   76  cd repo-root/
+   77  ls
+   78  cd
+   79  argocd login localhost:8080 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   80  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   81  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+   82  kubectl get svc
+   83  curl https://k8s-133.example.com -k
+   84  argocd app sync kamaji-tenants
+   85  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   86  argocd app sync kamaji-tenants
+   87  kubectl logs -n argocd deployment/argocd-repo-server
+   88  argocd app sync kamaji-project
+   89  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+   90  argocd app sync kamaji-project
+   91  argocd app list
+   92  argocd app sync kamaji-tcp
+   93  kubectl get pods -A
+   94  kubectl get pods 
+   95  kubectl get tenantcontrolplanes -A
+   96  kubectl get tenantcontrolplane k8s-134 -o yaml
+   97  kubectl logs -n kamaji-system deploy/kamaji-controller-manager -c manager -f
+   98  kubectl get datastore -A
+   99  kubectl get all -n default | grep k8s-134
+  100  kubectl logs -n kamaji-system deploy/kamaji-controller-manager -c manager -f | grep k8s-134
+  101  kubectl get pods -n kamaji-system
+  102  kubectl get deploy -n kamaji-system
+  103  kubectl logs -n kamaji-system deploy/kamaji -c manager -f
+  104  kubectl get tenantcontrolplane k8s-133 -n default -o yaml
+  105  argocd app sync kamaji-tcp
+  106  kubectl get tcp
+  107  argocd app sync kamaji-tcp
+  108  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o yaml | grep -A 20 "spec:" 
+  109  kubectl get tcp
+  110  argocd app sync kamaji-tcp
+  111  kubectl get tcp
+  112  cat /etc/hosts
+  113  curl https://k8s-133.example.com -k
+  114  kubectl describe tcp k8s-134
+  115  kubectl describe tcp k8s-134 | grep store
+  116  kubectl describe tcp k8s-134 | grep tore
+  117  kubectl log tcp k8s-134 | grep tore
+  118  kubectl logs tcp k8s-134 
+  119* [Bkubectl logs tcp k8s-134 -A
+  120  kubectl logs tcp k8s-133
+  121  kubectl get tcp
+  122  kubectl get tcp -o wide
+  123  kubectlget datastore
+  124  kubectl get datastore
+  125  kubectl logs tcp k8s-134
+  126  alias k=kubectl
+  127  k get pods 
+  128  k get tcp
+  129  k describe tcp k8s-134
+  130  sudo snap install freelens --classic
+  131  k describe tcp k8s-134
+  132  k get events -
+  133  k get events -A
+  134  k et node
+  135  k get node
+  136  k get pods -A
+  137  k get all -A | grep kamaji
+  138  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  139  k create ns k8s-134
+  140  argocd app sync kamaji-tcp
+  141  k get secrets -A
+  142  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+  143  argocd app sync kamaji-tcp
+  144  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  145  k describe tcp k8s-134
+  146  k describe tcp
+  147  k get tcp
+  148  k get pods -A
+  149  k get ns
+  150  k get pods -A
+  151  k get tcp -n k8s-134
+  152  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  153  k logs -n kamaji-system 
+  154  k get pods -n kube-system
+  155  k get pods -n kamaji-system
+  156  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  157  argocd app sync kamaji-tcp
+  158  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  159  argocd app sync kamaji-tcp
+  160  k logs -n kamaji-system pod/kamaji-696d8d978-rhkhq
+  161  k get pods -n kamaji-system
+  162  k delete pods -n kamaji-system kamaji-696d8d978-rhkhq --force --grace-period 0
+  163  k get pods -n kamaji-system
+  164  k logs -n kamaji-system kamaji-696d8d978-rwskt
+  165  k get pods -n kamaji-system
+  166  cat .kube/config 
+  167  argocd app sync kamaji-tcp
+  168  histiry
+  169  history
+  170  argocd login 192.168.56.101:31128 --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+  171  argocd app sync kamaji-tcp
+  172  argocd app delete kamaji-tcp --cascade=false --force
+  173  argocd app delete kamaji-tcp --cascade=false 
+  174  argocd app create kamaji-tcp   --repo http://192.168.56.1:8888/internship/kamaji-project.git   --path tenantcontrolplane   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automa
+  175  argocd app create kamaji-tcp   --repo https://github.com/kridhaythem/kamaji-project   --path tenantcontrolplane   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automated
+  176  argocd app create kamaji-tcp   --repo https://github.com/kridhaythem/kamaji-project   --path tenantcontrolplanes   --dest-server https://kubernetes.default.svc   --dest-namespace default   --sync-policy automated
+  177  kubectl get tcp -A
+  178  kubectl delete tcp k8s-133
+  179  kubectl apply -f https://github.com/kridhaythem/kamaji-project/blob/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  180  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  181  ls
+  182  kubectl apply -f https://raw.githubusercontent.com/clastix/kamaji/refs/heads/master/config/samples/kamaji_v1alpha1_tenantcontrolplane.yaml
+  183  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o yaml | grep creationTimestamp
+  184  kubectl apply -k https://github.com/clastix/kamaji/config/crd
+  185  kubectl apply -k "https://github.com/clastix/kamaji/config/crd?ref=master"
+  186  curl -s https://raw.githubusercontent.com/clastix/kamaji/master/config/crd/kustomization.yaml | head -n20
+  187  helm uninstall kamaji -n kamaji-system
+  188  kubectl delete crd tenantcontrolplanes.kamaji.clastix.io datastores.kamaji.clastix.io
+  189  helm repo add clastix https://clastix.github.io/charts
+  190  helm repo update
+  191  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  192  kubectl get pods -n kamaji-system
+  193  kubectl -n kamaji-system wait --for=condition=Available --timeout=180s deploy/kamaji
+  194  kubectl get pods -n kamaji-system
+  195  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  196  kubectl apply -k "https://github.com/clastix/kamaji/config/crd?ref=master"
+  197  kubectl get crd | grep kamaji
+  198  kubectl apply -f https://raw.githubusercontent.com/kridhaythem/kamaji-project/main/tenantcontrolplanes/kamaji_v1alpha1_tenantcontrolplane.yaml
+  199  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  200  $helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  201  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  202  helm uninstall kamaji -n kamaji-system
+  203  kubectl get crd tenantcontrolplanes.kamaji.clastix.io -o json | jq '.metadata.finalizers'
+  204  kubectl patch crd tenantcontrolplanes.kamaji.clastix.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+  205  kubectl patch crd datastores.kamaji.clastix.io -p '{"metadata":{"finalizers":[]}}' --type=merge
+  206  kubectl delete namespace kamaji-system --grace-period=0 --force
+  207  kubectl get ns
+  208  helm uninstall kamaji -n kamaji-system
+  209  helm uninstall kamaji -n kamaji-system --no-hooks
+  210  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  211  kubectl get ns kamaji-system
+  212  kubectl delete ns kamaji-system
+  213  kubectl get ns kamaji-system
+  214  kubectl get ns
+  215  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system      --set image.tag=latest
+  216  nano kamaji-system.json
+  217  kubectl delete ns kamaji-system -f
+  218  kubectl delete -f ns kamaji-system 
+  219  kubectl delete ns kamaji-system 
+  220  kubectl create ns kamaji-system
+  221  kubectl get namespace kamaji-system -o json
+  222  kubectl get namespace kamaji-system -o json > kamaji-system.json
+  223  kubectl delete all --all -n kamaji-system --grace-period=0 --force
+  224  kubectl delete pvc --all -n kamaji-system --grace-period=0 --force
+  225  kubectl get pvc -n kamaji-system -o name
+  226  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  227  kubectl get ns
+  228  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  229  kubectl get ns kamaji-system
+  230  kubectl get crds | grep kamaji
+  231  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  232  kubectl delete crd tenantcontrolplanes.kamaji.clastix.io
+  233  kubectl delete crd datastores.kamaji.clastix.io
+  234  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest
+  235  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system      --set image.tag=latest
+  236  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest   --debug --timeout 5m
+  237  kubectl get namespace kamaji-system -o json | jq '.spec.finalizers'
+  238  kubectl patch namespace kamaji-system -p '{"spec":{"finalizers":[]}}' --type=merge
+  239  kubectl delete namespace kamaji-system --grace-period=0 --force
+  240  kubectl get ns kamaji-system -o json > tmp-kamaji-ns.json
+  241  kubectl replace --raw "/api/v1/namespaces/kamaji-system/finalize" -f ./tmp-kamaji-ns.json
+  242  kubectl get ns kamaji-system
+  243  helm install kamaji clastix/kamaji   --version 0.0.0+latest   --namespace kamaji-system   --create-namespace   --set image.tag=latest   --debug --timeout 5m
+  244  kubectl get jobs -n kamaji-system
+  245  kubectl logs job/kamaji-etcd-setup-1 -n kamaji-system
+  246  kubectl get pvc -n kamaji-system
+  247  kubectl describe job kamaji-etcd-setup-1 -n kamaji-system
+  248  kubectl logs job/kamaji-etcd-setup-1 -n kamaji-system
+  249  kubectl describe pod kamaji-etcd-setup-1-brbdb -n kamaji-system
+  250  kubectl get pods -n calico-system
+  251  kubectl logs -n calico-system -l k8s-app=calico-node
+  252  kubectl get clusterrolebinding | grep calico
+  253  kubectl get clusterrole | grep calico
+  254  kubectl get sa -n calico-system
+  255  kubectl delete pod -n calico-system -l k8s-app=calico-node
+  256  ls
+  257  cat history.txt 
+  258  crontab -e
+  259  history
+  260  cat history.txt 
+  261  crontab -e
+  262  cat history.txt 
+  263  nano /var/local/bin/backup_histories.sh
+  264  ls /var/local/
+  265  mkdir /var/local/bin
+  266  nano /var/local/bin/backup_histories.sh
+  267  chmod +x /usr/local/bin/backup_histories.sh
+  268  mv /var/local/bin/backup_histories.sh  /usr/local/bin/
+  269  chmod +x /usr/local/bin/backup_histories.sh
+  270  crontab -e
+  271  cat history.txt 
+  272  ls /var/log/user_histories/
+  273  cd /var/log/user_histories/
+  274  ls /var/log/user_histories/
+  275  nano /var/local/bin/backup_histories.sh
+  276  nano /usr/local/bin/backup_histories.sh
+  277  chmod +x /usr/local/bin/backup_histories.sh
+  278  rm /var/log/user_histories/*
+  279  ls /var/log/user_histories/
+  280  ls
+  281  ls /var/log/user_histories/
+  282  cd ..
+  283  cat all_users_history.txt 
+  284  cd
+  285  cat .bash_history 
+  286  history
