@@ -1,3 +1,4 @@
+
 #!/bin/bash
 set -euo pipefail
 
@@ -26,7 +27,7 @@ echo "🟢 Installing Calico CNI..."
 wget -q https://docs.projectcalico.org/manifests/tigera-operator.yaml
 wget -q https://docs.projectcalico.org/manifests/custom-resources.yaml
 
-kubectl apply -f tigera-operator.yaml
+kubectl create -f tigera-operator.yaml
 sed -i 's|cidr: .*|cidr: 172.16.2.0/24|' custom-resources.yaml
 kubectl apply -f custom-resources.yaml
 
@@ -101,8 +102,7 @@ rm argocd-linux-amd64
 
 echo "✅ Argo CD CLI installed: $(argocd version --client)"
 
-### 🔁 Expose Argo CD HTTP on NodePort 33333
-echo "🔧 Exposing Argo CD HTTP (port 8080) on NodePort 33333..."
+echo "🔧 Exposing Argo CD HTTP (port 8080) on NodePort 32080..."
 kubectl -n argocd patch svc argocd-server \
   --type merge \
   -p '{
@@ -114,20 +114,35 @@ kubectl -n argocd patch svc argocd-server \
           "port": 80,
           "protocol": "TCP",
           "targetPort": 8080,
-          "nodePort": 33333
+          "nodePort": 32080
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "TCP",
+          "targetPort": 8080
         }
       ]
     }
   }'
 
-### 8. Login to Argo CD via CLI
+### 🔐 Login to Argo CD via CLI
 echo "🔐 Logging into Argo CD via CLI..."
+
+# Wait for the initial admin secret to be created
+for i in {1..30}; do
+    echo "⌛ Waiting for Argo CD admin secret..."
+    if kubectl -n argocd get secret argocd-initial-admin-secret &> /dev/null; then
+        break
+    fi
+    sleep 5
+done
 
 ARGOCD_PASSWORD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
 
-argocd login 192.168.56.101:33333 \
+argocd login 192.168.56.101:32080 \
   --username admin \
   --password "$ARGOCD_PASSWORD" \
   --insecure
 
-echo "✅ Successfully logged into Argo CD CLI."
+echo "✅ Argo CD installed and logged in successfully!"
